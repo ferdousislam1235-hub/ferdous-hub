@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferdous Hub — All-in-One Platform</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#64748b;--brand:#2563eb;--brand2:#7c3aed;--line:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#142b65,#4f46e5 65%,#7c3aed);color:white;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-weight:850;font-size:1.35rem;letter-spacing:.2px}.logo span{color:#a5f3fc}
+nav{display:flex;gap:8px;flex-wrap:wrap}button,.navbtn{border:0;border-radius:11px;padding:10px 14px;cursor:pointer;font:inherit;font-weight:650}
+nav button{background:#ffffff1c;color:white}.primary{background:var(--brand);color:#fff}.light{background:#eef2ff;color:#3730a3}.outline{border:1px solid var(--line);background:#fff;color:var(--ink)}
+main{max-width:1120px;margin:auto;padding:24px 18px 56px}.hero{border-radius:24px;padding:30px;background:linear-gradient(130deg,#dbeafe,#ede9fe);display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:center}
+h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.12;margin:8px 0 14px}.hero p{color:#334155;line-height:1.7}.tag{display:inline-block;background:#fff9;color:#3730a3;padding:6px 10px;border-radius:99px;font-size:.84rem;font-weight:750}
+.hero-art{background:#ffffffa8;border:1px solid #ffffff;padding:22px;border-radius:20px;text-align:center}.hero-art .big{font-size:4.2rem}.hero-art p{margin:4px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}.section-head h2{margin:0;font-size:1.35rem}.muted{color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 4px 16px #0f172a06}.card .emoji{font-size:1.8rem}.card h3{margin:10px 0 6px}.card p{margin:0 0 14px;color:var(--muted);line-height:1.5;font-size:.94rem}
+.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;font:inherit;margin:6px 0 12px;background:white}
+.postbox{display:flex;gap:10px;align-items:center;margin-bottom:14px}.postbox input{flex:1;min-width:120px;margin:0}.post{margin-top:10px}.post strong{display:block}.post time{font-size:.8rem;color:var(--muted)}.post p{color:var(--ink);white-space:pre-wrap}.post-actions{display:flex;gap:8px;flex-wrap:wrap}
+.notice{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:13px 15px;border-radius:14px;line-height:1.55;margin-top:20px;font-size:.9rem}
+footer{text-align:center;padding:25px;color:var(--muted);font-size:.9rem}
+.hidden{display:none!important}.modal{position:fixed;inset:0;background:#0f172acc;display:grid;place-items:center;padding:16px;z-index:5}.modalbox{width:min(460px,100%);background:white;padding:24px;border-radius:20px;max-height:90vh;overflow:auto}.modalbox h2{margin-top:0}.status{font-size:.9rem;color:#047857;margin-top:8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.hero-art{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{align-items:flex-start}nav{width:100%}nav button{flex:1}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.postbox{align-items:stretch;flex-direction:column}.postbox button{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Ferdous <span>Hub</span></div>
+  <nav aria-label="প্রধান মেনু">
+    <button onclick="go('home')">হোম</button><button onclick="go('tools')">অনলাইন টুলস</button><button onclick="go('community')">কমিউনিটি</button><button onclick="openAccount()">অ্যাকাউন্ট</button>
+  </nav>
+</header>
+<main id="home">
+  <section class="hero">
+    <div>
+      <span class="tag">এক জায়গায় ডিজিটাল সেবা</span>
+      <h1>তোমার ডিজিটাল দুনিয়া,<br>একটি প্ল্যাটফর্মে।</h1>
+      <p>অনলাইন টুলস ব্যবহার করো, নতুন পোস্ট শেয়ার করো, আর নিজের ডিজিটাল কমিউনিটি তৈরি করো। এটি Ferdous Hub-এর প্রথম পরীক্ষামূলক সংস্করণ।</p>
+      <div class="row"><button class="primary" onclick="go('tools')">টুলস দেখো →</button><button class="light" onclick="openAccount()">অ্যাকাউন্ট খুলুন</button></div>
+    </div>
+    <div class="hero-art"><div class="big">🌐</div><h3>Ferdous Hub</h3><p>Founder & Owner: Ferdous</p><p class="muted">All-in-One Online Platform</p></div>
+  </section>
+
+  <section id="tools">
+    <div class="section-head"><div><h2>অনলাইন সেবা ও টুলস</h2><div class="muted">কিছু ব্যবহারযোগ্য টুলের প্রাথমিক নমুনা</div></div></div>
+    <div class="grid">
+      <article class="card"><div class="emoji">📝</div><h3>নোট তৈরি</h3><p>দ্রুত নোট লিখে কপি করে রাখো।</p><button class="outline" onclick="openTool('note')">নোট খুলুন</button></article>
+      <article class="card"><div class="emoji">🔢</div><h3>ক্যালকুলেটর</h3><p>সাধারণ হিসাব সহজে করো।</p><button class="outline" onclick="openTool('calc')">হিসাব করুন</button></article>
+      <article class="card"><div class="emoji">🔤</div><h3>টেক্সট কাউন্টার</h3><p>লেখার অক্ষর ও শব্দ গণনা করো।</p><button class="outline" onclick="openTool('count')">গণনা করুন</button></article>
+      <article class="card"><div class="emoji">📋</div><h3>কপি প্যাড</h3><p>গুরুত্বপূর্ণ লেখা সাময়িকভাবে রাখো।</p><button class="outline" onclick="openTool('pad')">খুলুন</button></article>
+      <article class="card"><div class="emoji">👥</div><h3>কমিউনিটি পোস্ট</h3><p>নিচের অংশে একটি পোস্ট লিখে প্রকাশ করো।</p><button class="outline" onclick="go('community')">পোস্টে যাও</button></article>
+      <article class="card"><div class="emoji">🛠️</div><h3>আরও টুল আসছে</h3><p>পরের ধাপে নতুন সেবা যোগ করা যাবে।</p><button class="outline" onclick="alert('পরবর্তী সংস্করণে নতুন টুল যোগ করা হবে।')">বিস্তারিত</button></article>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="section-head"><div><h2>কমিউনিটি</h2><div class="muted">একটি ডেমো পোস্ট ফিড — এই ব্রাউজার সেশনে কাজ করে</div></div></div>
+    <div class="card">
+      <label for="postText"><strong>কী শেয়ার করতে চাও?</strong></label>
+      <div class="postbox"><input id="postText" class="field" placeholder="তোমার পোস্ট লিখো..." maxlength="500"><button class="primary" onclick="addPost()">পোস্ট করুন</button></div>
+      <div id="feed"><article class="card post"><strong>Ferdous Hub <span class="tag">স্বাগতম</span></strong><time>ডেমো পোস্ট</time><p>এটি তোমার নতুন অনলাইন প্ল্যাটফর্মের প্রথম নমুনা। এখানে পরবর্তীতে লগইন, স্থায়ী পোস্ট ও মেসেজিং যুক্ত করা যাবে।</p></article></div>
+    </div>
+  </section>
+
+  <section id="admin">
+    <div class="section-head"><div><h2>অ্যাডমিন প্যানেল</h2><div class="muted">শুধু ইন্টারফেসের নমুনা; এখনো সুরক্ষিত লগইন নেই</div></div></div>
+    <div class="card"><p>এখান থেকে ভবিষ্যতে ব্যবহারকারী, পোস্ট, রিপোর্ট এবং প্ল্যাটফর্মের সেটিংস পরিচালনা করা যাবে।</p><button class="light" onclick="openAdmin()">ডেমো অ্যাডমিন দেখুন</button></div>
+  </section>
+  <div class="notice"><strong>গুরুত্বপূর্ণ:</strong> এটি একটি ফ্রি, এক-ফাইল প্রোটোটাইপ। এখনো প্রকৃত সার্ভার, ডেটাবেস, নিরাপদ ব্যবহারকারী অ্যাকাউন্ট, অন্য ব্যবহারকারীর সঙ্গে লাইভ মেসেজিং বা আয়ের ব্যবস্থা যুক্ত নেই। পোস্টগুলো এই পেজে অস্থায়ীভাবে দেখা যায়; রিফ্রেশ করলে হারিয়ে যেতে পারে। লাইভ চালু করার আগে নিরাপত্তা ও ব্যাকএন্ড যুক্ত করতে হবে।</div>
+</main>
+<footer>© <span id="year"></span> Ferdous Hub · Founder & Owner: Ferdous · প্রাথমিক ডেমো</footer>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeModal()">
+  <div class="modalbox"><div class="row" style="justify-content:space-between"><h2 id="modalTitle">টুল</h2><button class="outline" onclick="closeModal()">বন্ধ ✕</button></div><div id="modalBody"></div></div>
+</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
+function showModal(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modal').classList.remove('hidden')}
+function closeModal(){document.getElementById('modal').classList.add('hidden')}
+function openTool(type){
+ let body='';
+ if(type==='note')body='<textarea id="toolText" class="field" rows="6" placeholder="এখানে নোট লিখুন"></textarea><button class="primary" onclick="copyTool()">লেখা কপি করুন</button><p id="toolStatus" class="status"></p>';
+ if(type==='pad')body='<textarea id="toolText" class="field" rows="7" placeholder="এখানে সাময়িক লেখা রাখুন"></textarea><button class="primary" onclick="copyTool()">কপি করুন</button><p id="toolStatus" class="status"></p>';
+ if(type==='count')body='<textarea id="toolText" class="field" rows="6" oninput="countText()" placeholder="এখানে লেখা পেস্ট করুন"></textarea><p id="countResult" class="status">শব্দ: ০ · অক্ষর: ০</p>';
+ if(type==='calc')body='<input id="calcA" class="field" type="number" placeholder="প্রথম সংখ্যা"><select id="calcOp" class="field"><option value="+">যোগ (+)</option><option value="-">বিয়োগ (−)</option><option value="*">গুণ (×)</option><option value="/">ভাগ (÷)</option></select><input id="calcB" class="field" type="number" placeholder="দ্বিতীয় সংখ্যা"><button class="primary" onclick="calculate()">হিসাব করুন</button><p id="calcResult" class="status"></p>';
+ showModal(({note:'নোট তৈরি',pad:'কপি প্যাড',count:'টেক্সট কাউন্টার',calc:'ক্যালকুলেটর'})[type],body)
+}
+function copyTool(){const t=document.getElementById('toolText');t.select();let s=document.getElementById('toolStatus');try{document.execCommand('copy');s.textContent='কপি করার চেষ্টা করা হয়েছে।'}catch(e){s.textContent='লেখা নির্বাচন করে কপি করুন।'}}
+function countText(){let v=document.getElementById('toolText').value;let words=v.trim()?v.trim().split(/\s+/).length:0;document.getElementById('countResult').textContent=`শব্দ: ${words} · অক্ষর: ${v.length}`;}
+function calculate(){let a=Number(document.getElementById('calcA').value),b=Number(document.getElementById('calcB').value),op=document.getElementById('calcOp').value;let r=op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:b===0?'শূন্য দিয়ে ভাগ করা যায় না':a/b;document.getElementById('calcResult').textContent='ফলাফল: '+r;}
+function addPost(){let input=document.getElementById('postText'),v=input.value.trim();if(!v){alert('আগে একটি পোস্ট লিখুন।');return}let article=document.createElement('article');article.className='card post';let strong=document.createElement('strong');strong.textContent='Ferdous Hub সদস্য';let time=document.createElement('time');time.textContent=new Date().toLocaleString('bn-BD');let p=document.createElement('p');p.textContent=v;article.append(strong,time,p);document.getElementById('feed').prepend(article);input.value='';}
+function openAccount(){showModal('অ্যাকাউন্ট',`<p>এই ডেমোতে প্রকৃত অ্যাকাউন্ট তৈরি হয় না। পরের ধাপে নিরাপদ রেজিস্ট্রেশন ও লগইন যুক্ত করতে হবে।</p><label>নাম</label><input class="field" placeholder="তোমার নাম" disabled><label>ইমেইল</label><input class="field" placeholder="name@example.com" disabled><button class="primary" onclick="closeModal()">ঠিক আছে</button>`)}
+function openAdmin(){showModal('ডেমো অ্যাডমিন প্যানেল',`<p><strong>প্রতিষ্ঠাতা:</strong> Ferdous</p><p>ডেমো স্ট্যাটাস: প্রোটোটাইপ চালু</p><p>ব্যবহারকারী ব্যবস্থাপনা, পোস্ট মডারেশন এবং সেটিংস ভবিষ্যতে নিরাপদ ব্যাকএন্ডের মাধ্যমে যুক্ত করতে হবে।</p><button class="primary" onclick="closeModal()">বন্ধ করুন</button>`)}
+</script>
+</body>
+</html>
